@@ -1,0 +1,78 @@
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px 0;
+    border-bottom: 2px solid #757575;
+}
+
+.area {
+    display: grid;
+    grid-template-areas: "addTotal total"
+        "budgetList budgetList"
+        "budgetList budgetList";
+    text-align: left;
+}
+
+.add {
+    grid-area: addTotal;
+}
+
+.total {
+    grid-area: total;
+}
+
+.budgetList {
+    grid-area: budgetList;
+}
+
+/* .formAddItem {
+    display: grid;
+    grid-template-areas: "name cost description";
+}
+
+.name {
+    grid-area: name;
+}
+
+.description {
+    grid-area: description;
+}
+
+.cost {
+    grid-area: cost;
+} */
+
+input {
+    min-width: 150px;
+}
+
+#totalAmount {
+    font-size: 48px;
+}
+
+#totalLoses {
+    font-size: 48px;
+    color: rgb(128, 20, 20);
+}
+
+#totalProfit {
+    font-size: 48px;
+    color: rgb(21, 129, 18);
+}
+
+.item {
+    margin: 20px 0;
+}
+
+.item .f-l {
+    text-align: left;
+}
+
+.item .f-r {
+    text-align: right;
+}
+
+.item .f-l,
+.item .f-r {
+    margin: 5px 0;
+}
