@@ -19,6 +19,7 @@ h2 {
 
 .total {
     grid-area: total;
+    text-align: right;
 }
 
 .budgetList {
@@ -31,6 +32,11 @@ h2 {
             "total total"
             "budgetList budgetList"
             "budgetList budgetList";
+    }
+
+
+    .total {
+        text-align: left;
     }
 }
 
@@ -52,18 +58,22 @@ h2 {
 } */
 
 input {
+    margin-left: 0;
     min-width: 150px;
 }
 
+.total,
 #totalAmount {
     font-size: 48px;
 }
 
+.loses,
 #totalLoses {
     font-size: 48px;
     color: rgb(128, 20, 20);
 }
 
+.profit,
 #totalProfit {
     font-size: 48px;
     color: rgb(21, 129, 18);
@@ -87,5 +97,6 @@ input {
 }
 
 .btn-3 {
+    margin-left: 0;
     user-select: none;
 }
