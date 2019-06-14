@@ -25,6 +25,15 @@ h2 {
     grid-area: budgetList;
 }
 
+@media screen and (max-width: 850px) {
+    .area {
+        grid-template-areas: "addTotal addTotal"
+            "total total"
+            "budgetList budgetList"
+            "budgetList budgetList";
+    }
+}
+
 /* .formAddItem {
     display: grid;
     grid-template-areas: "name cost description";
@@ -75,4 +84,8 @@ input {
 .item .f-l,
 .item .f-r {
     margin: 5px 0;
+}
+
+.btn-3 {
+    user-select: none;
 }
