@@ -3,30 +3,40 @@ var loses = 0;
 var profit = 0;
 var num = 0;
 var cost = 0;
-document.getElementById("totalAmount").innerHTML = balance;
-document.getElementById("totalLoses").innerHTML = 0;
-document.getElementById("totalProfit").innerHTML = 0;
+
+var totalAmount = document.getElementById("totalAmount");
+var totalLoses = document.getElementById("totalLoses");
+var totalProfit = document.getElementById("totalProfit");
+var setBalance = document.getElementById("setBal");
+var nameId = document.getElementById('name');
+var description = document.getElementById('description');
+var costId = document.getElementById('cost');
+var items = document.getElementById("items");
+
+totalAmount.innerHTML = balance;
+totalLoses.innerHTML = 0;
+totalProfit.innerHTML = 0;
 
 function setBal() {
-    balance = document.getElementById("setBal").value;
-    document.getElementById("totalAmount").innerHTML = balance;
+    balance = setBalance.value;
+    totalAmount.innerHTML = balance;
 
     loses = loses + cost;
-    document.getElementById('totalLoses').innerHTML = loses;
-
+    totalLoses.innerHTML = loses;
     profit = balance - loses;
-    document.getElementById('totalProfit').innerHTML = profit;
+    totalProfit.innerHTML = profit;
 }
 
 function makeItem() {
-    if (document.getElementById('name').value == '' || document.getElementById('description').value == '' || document.getElementById('cost').value == '') {
+    if (nameId.value == '' || description.value == '' || costId.value == '') {
         alert("Please fill in all inputs");
         return "error";
     }
+
     var z = document.createElement('div');
-    var name = document.getElementById('name').value;
-    var desc = document.getElementById('description').value;
-    var cost = parseInt(document.getElementById('cost').value);
+    var name = nameId.value;
+    var desc = description.value;
+    var cost = parseInt(costId.value);
     z.innerHTML =
         `<div class="item" id="item${num}">
         <hr>
@@ -42,24 +52,22 @@ function makeItem() {
     </div>`;
 
     loses = loses + cost;
-    document.getElementById('totalLoses').innerHTML = loses;
-
+    totalLoses.innerHTML = loses;
     profit = balance - loses;
-    document.getElementById('totalProfit').innerHTML = profit;
-    document.getElementById("items").appendChild(z.firstChild);
-    document.getElementById('name').value = '';
-    document.getElementById('description').value = '';
-    document.getElementById('cost').value = '';
+    totalProfit.innerHTML = profit;
+    items.appendChild(z.firstChild);
+    nameId.value = '';
+    description.value = '';
+    costId.value = '';
     num++;
 
 }
 
 function deleteItem(num, cost) {
     loses = loses - parseInt(cost);
-    document.getElementById('totalLoses').innerHTML = loses;
-
+    totalLoses.innerHTML = loses;
     profit = balance - loses;
-    document.getElementById('totalProfit').innerHTML = profit;
+    totalProfit.innerHTML = profit;
 
-    document.getElementById("items").removeChild(document.getElementById('item' + num));
+    items.removeChild(document.getElementById('item' + num));
 }
