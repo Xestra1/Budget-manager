@@ -1,42 +1,40 @@
-var balance = 0;
-var loses = 0;
-var profit = 0;
-var num = 0;
-var cost = 0;
+let balance = 0;
+let loses = 0;
+let profit = 0;
+let num = 0;
+let cost = 0;
 
-var totalAmount = document.getElementById("totalAmount");
-var totalLoses = document.getElementById("totalLoses");
-var totalProfit = document.getElementById("totalProfit");
-var setBalance = document.getElementById("setBal");
-var nameId = document.getElementById('name');
-var description = document.getElementById('description');
-var costId = document.getElementById('cost');
-var items = document.getElementById("items");
+const totalAmount = document.getElementById("totalAmount");
+const totalLoses = document.getElementById("totalLoses");
+const totalProfit = document.getElementById("totalProfit");
+const setBalance = document.getElementById("setBal");
+const nameId = document.getElementById('name');
+const description = document.getElementById('description');
+const costId = document.getElementById('cost');
+const items = document.getElementById("items");
 
 totalAmount.innerHTML = balance;
 totalLoses.innerHTML = 0;
 totalProfit.innerHTML = 0;
 
-function setBal() {
+const setBal = () => {
     balance = setBalance.value;
     totalAmount.innerHTML = balance;
-
     loses = loses + cost;
     totalLoses.innerHTML = loses;
     profit = balance - loses;
     totalProfit.innerHTML = profit;
 }
 
-function makeItem() {
+const makeItem = () => {
     if (nameId.value == '' || description.value == '' || costId.value == '') {
         alert("Please fill in all inputs");
         return "error";
     }
-
-    var z = document.createElement('div');
-    var name = nameId.value;
-    var desc = description.value;
-    var cost = parseInt(costId.value);
+    const z = document.createElement('div');
+    let name = nameId.value;
+    let desc = description.value;
+    let cost = parseInt(costId.value);
     z.innerHTML =
         `<div class="item" id="item${num}">
         <hr>
@@ -63,7 +61,7 @@ function makeItem() {
 
 }
 
-function deleteItem(num, cost) {
+const deleteItem = (num, cost) => {
     loses = loses - parseInt(cost);
     totalLoses.innerHTML = loses;
     profit = balance - loses;
